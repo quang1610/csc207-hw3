@@ -48,6 +48,20 @@ public class TBExpt {
     
     TextBlock block7 = new BlockPair(block6);
     TBUtils.print(pen, block7);
+    
+    TextLine tb1 = new TextLine("Hello");
+    TextLine tb2 = new TextLine("World");
+    TextBlock compound = new BoxedBlock(new CenteredBlock(new BoxedBlock(new CenteredBlock(new VComposition(tb1, tb2), 7)), 15));
+    //TextBlock compound = new CenteredBlock(new VComposition(tb1, tb2), 7);
+    pen.println("ORIGINAL");
+    TBUtils.print(pen, compound);
+    tb2.setContents("Someone");
+    pen.println("UPDATED");
+    TBUtils.print(pen, compound);
+    tb1.setContents("Nice to meet you,");
+    pen.println("RE-UPDATED");
+    TBUtils.print(pen, compound);
+    
     System.out.println("test");
     pen.close();
   } // main(String[])

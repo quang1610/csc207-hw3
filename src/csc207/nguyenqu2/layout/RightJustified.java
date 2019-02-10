@@ -10,17 +10,19 @@ public class RightJustified implements TextBlock{
     this.text = text;
     this.width  = width;
   }
+  
   public String row(int i) throws Exception {
     if((i<0)||(i>height())){
       throw new Exception("Invalid row!");
     }
     else {
-      int spaces = (this.width - this.text.width());
+      int spaces = (this.width() - this.text.width());
       return TBUtils.spaces(spaces)+this.text.row(i);
     }
     
   }
   public int width() {
+    this.width = Math.max(this.text.width(), this.width);
     return this.width;
   }
   public int height() {

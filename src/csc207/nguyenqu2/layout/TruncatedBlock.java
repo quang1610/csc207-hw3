@@ -1,7 +1,7 @@
 package csc207.nguyenqu2.layout;
 
 public class TruncatedBlock implements TextBlock {
-  private TextBlock truncatedTb;
+  private TextBlock text;
   private int width;
   
   public TruncatedBlock(TextBlock tb, int width) throws Exception{
@@ -10,21 +10,22 @@ public class TruncatedBlock implements TextBlock {
       throw new Exception("Invalid width!");
     } else {
       this.width = width; 
-      this.truncatedTb = tb;
+      this.text = tb;
     }
   }
   
   public int height() {
-    return this.truncatedTb.height();
+    return this.text.height();
   }
   
   public int width() {
+    this.width = Math.max(this.text.width(), this.width);
     return this.width;
   }
   
   public String row(int i) throws Exception {
-    String row = this.truncatedTb.row(i);
-    row = row.substring(0, this.width);
+    String row = this.text.row(i);
+    row = row.substring(0, width());
     return row;
   }
 }
