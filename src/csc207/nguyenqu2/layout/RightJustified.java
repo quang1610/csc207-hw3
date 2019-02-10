@@ -18,6 +18,7 @@ public class RightJustified implements TextBlock{
       int spaces = (this.width - this.text.width());
       return TBUtils.spaces(spaces)+this.text.row(i);
     }
+    //See if you get a pull request or not
     
   }
   public int width() {
