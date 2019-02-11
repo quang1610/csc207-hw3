@@ -18,13 +18,28 @@ public class ManyPackages implements Item {
 
   @Override
   public int getPrice() {
-    return this.type.getPrice()*this.count;
+    return this.type.getPrice() * this.count;
   }
 
   public String toString() {
     return this.count + " x " + this.type.toString();
   }
 
+  public int getCount() {
+    return this.count;
+  }
+
+  public void setCount(int newCount) {
+    this.count = newCount;
+  }
+
+  public Package getPackage() {
+    return this.type;
+  }
+  
+  public String getName() {
+    return this.getPackage().getName();
+  }
   public boolean equals(ManyPackages other) {
     return this == other;
   }

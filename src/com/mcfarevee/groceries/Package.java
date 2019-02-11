@@ -12,6 +12,10 @@ public class Package implements Item {
     this.price = price;
   }
 
+  public String getName() {
+    return this.name;
+  }
+
   @Override
   public Weight getWeight() {
     return this.weight;

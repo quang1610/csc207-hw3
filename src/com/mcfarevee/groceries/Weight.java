@@ -10,11 +10,15 @@ public class Weight {
   }
 
   public Unit getUnit() {
-    return unit;
+    return this.unit;
   }
 
   public int getAmount() {
-    return amount;
+    return this.amount;
+  }
+  
+  public void setAmount(int newAmount) {
+    this.amount = newAmount;
   }
 
   public boolean equals(Weight other) {

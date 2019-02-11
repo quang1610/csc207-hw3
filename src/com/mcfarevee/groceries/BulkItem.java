@@ -40,7 +40,9 @@ public class BulkItem implements Item{
     else {
       return false;
     }
-    
+  }
+  public String getName() {
+    return this.getFood().getName();
   }
   
 

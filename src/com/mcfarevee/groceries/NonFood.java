@@ -22,8 +22,12 @@ public class NonFood implements Item {
     return this.price;
   }
 
-  public String toString() {
+  public String getName() {
     return this.name;
+  }
+  
+  public String toString() {
+    return this.getName();
   }
 
   public boolean equals(NonFood other) {
