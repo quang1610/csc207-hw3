@@ -68,7 +68,7 @@ public class BulkItem implements Item {
 
   // Compare
   public boolean equals(BulkItem b) {
-    if (this.food == b.getFood() && this.unit == b.getUnit() && this.amount == b.getAmount()) {
+    if (this.food.equals( b.getFood()) && this.unit == b.getUnit() && this.amount == b.getAmount()) {
       return true;
     } else {
       return false;

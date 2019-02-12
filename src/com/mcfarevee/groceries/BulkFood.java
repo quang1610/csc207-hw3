@@ -56,5 +56,12 @@ public class BulkFood {
   public int getSupply() {
     return this.supply;
   }
+  
+  public boolean equals(BulkFood bf) {
+    return ((this.name.equals(bf.getName()) && 
+        (this.pricePerUnit == bf.getPricePerUnit()) &&
+        (this.unit.equals(bf.getUnit()) &&
+         (this.supply == bf.getSupply()))));
+  }
 
 }
