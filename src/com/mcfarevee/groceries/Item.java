@@ -4,12 +4,15 @@ package com.mcfarevee.groceries;
 
 public interface Item {
 
-  //All items have an accessor which retreives their weight
+  //All items have an accessor which retrieves their weight
   public Weight getWeight(); 
 
-  //All items have an accessor which retreives their pricee
+  //All items have an accessor which retrieves their price
   public int getPrice();
 
-  //All items have an accessor which retreives a string discription of the item
+  //All items have an accessor which retrieves a string description of the item
   public String toString();
+
+  //All items have an accessor which retrieves a string of the name
+  public String getName();
 }

@@ -30,7 +30,7 @@ public class BulkFood {
     this.pricePerUnit = pricePerUnit;
     this.unit = unit;
     this.supply = supply;
-    //Specify the nature of the above-discribed fields
+    //Specify the nature of the above-described fields
   }
 
   // +-----------+---------------------------------------------------

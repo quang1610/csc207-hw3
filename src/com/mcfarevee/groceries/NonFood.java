@@ -11,7 +11,7 @@ public class NonFood implements Item {
   //String to contain the name of the item
   private String name;
 
-  //Contains the weight of the item as perscribed in the Weight class
+  //Contains the weight of the item as prescribed in the Weight class
   private Weight weight;
 
   //The price of one of these items, in cents
@@ -26,14 +26,14 @@ public class NonFood implements Item {
     this.name = name;
     this.weight = weight;
     this.price = price;
-    //Specify the nature of the above-discribed fields
+    //Specify the nature of the above-described fields
   }
 
   // +-----------+---------------------------------------------------
   // | Accessors |
   // +-----------+
 
-  //Get the Weight (as discribed in the Weight class) of the NonFood item
+  //Get the Weight (as described in the Weight class) of the NonFood item
   @Override
   public Weight getWeight() {
     return this.weight;
@@ -45,9 +45,14 @@ public class NonFood implements Item {
     return this.price;
   }
 
-  //Return a string which discribes the NonFood item
-  public String toString() {
+  //Returns the name of the item in string form
+  public String getName() {
     return this.name;
+  }
+  
+  //Return a string which describes the NonFood item
+  public String toString() {
+    return this.getName();
   }
 
   //Returns true if the fields of the two NonFood items match

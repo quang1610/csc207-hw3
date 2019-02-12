@@ -1,6 +1,6 @@
 package com.mcfarevee.groceries;
 
-/* This class organizes the attributes of a number of packages, as discribed
+/* This class organizes the attributes of a number of packages, as described
  * in the 'Package' class */
 
 public class ManyPackages implements Item {
@@ -9,7 +9,7 @@ public class ManyPackages implements Item {
   // | Fields |
   // +--------+
 
-  //The Package which this ManyPackage contains mutiple of
+  //The Package which this ManyPackage contains multiple of
   private Package type;
 
   //The number of packages in this ManyPackage
@@ -23,14 +23,14 @@ public class ManyPackages implements Item {
   public ManyPackages(Package type, int count) {
     this.type = type;
     this.count = count;
-    //Specify the nature of the above-discribed fields
+    //Specify the nature of the above-described fields
   }
 
   // +-----------+---------------------------------------------------
   // | Accessors |
   // +-----------+
 
-  //Get the Weight (as discribed in the Weight class) of the ManyPackages
+  //Get the Weight (as described in the Weight class) of the ManyPackages
   @Override
   public Weight getWeight() {
     return new Weight(this.type.getWeight().getUnit(),
@@ -43,9 +43,29 @@ public class ManyPackages implements Item {
     return this.type.getPrice() * this.count;
   }
 
-  //Returns the string which discribes the
+  //Returns the string which describes the Packages
   public String toString() {
     return this.count + " x " + this.type.toString();
+  }
+  
+  //Returns the count of packages
+  public int getCount() {
+    return this.count;
+  }
+
+  //Changes the count to a new count
+  public void setCount(int newCount) {
+    this.count = newCount;
+  }
+
+  //Returns the type variable
+  public Package getPackage() {
+    return this.type;
+  }
+
+  //Returns the string name of the package
+  public String getName() {
+    return this.getPackage().getName();
   }
 
   //Returns true if the two ManyPackages have the same memory location

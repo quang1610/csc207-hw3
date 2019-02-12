@@ -6,7 +6,7 @@ public class Weight {
   // | Fields |
   // +--------+
 
-  //The Unit of the Weight, as discribed in the Unit class
+  //The Unit of the Weight, as described in the Unit class
   private Unit unit;
 
   //The amount of the Weight
@@ -26,14 +26,19 @@ public class Weight {
   // | Accessors |
   // +-----------+
 
-  //Gets the Unit of the Weight, as discribed in the Unit class
+  //Gets the Unit of the Weight, as described in the Unit class
   public Unit getUnit() {
-    return unit;
+    return this.unit;
   }
 
   //Gets the amount or quantity of the Weight
   public int getAmount() {
-    return amount;
+    return this.amount;
+  }
+  
+  //Sets the amount field to a new value
+  public void setAmount(int newAmount) {
+    this.amount = newAmount;
   }
 
   //Returns true if the fields of two Weights are equal
