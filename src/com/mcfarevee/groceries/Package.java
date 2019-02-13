@@ -1,5 +1,7 @@
 package com.mcfarevee.groceries;
 
+//The Package class organizes the attributes of a package of food
+
 public class Package implements Item {
 
   // +--------+------------------------------------------------------
