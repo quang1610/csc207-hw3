@@ -25,6 +25,8 @@ public class ShoppingTest {
     cart.addItem(new BulkItem(saffron, Unit.GRAM, 1));
     // The customer adds five 6oz packages of macncheez to the cart, each
     // priced at 77 cents.
+    
+    //Customer adds a number of packages of macncheez, including one measured in different weights
     cart.addItem(new ManyPackages(new Package("macncheez", new Weight(Unit.OUNCE, 6), 77), 5));
     cart.addItem(new Package("macncheez", new Weight(Unit.OUNCE, 6), 77));
     cart.addItem(new ManyPackages(new Package("macncheez", new Weight(Unit.OUNCE, 6), 77), 4));
