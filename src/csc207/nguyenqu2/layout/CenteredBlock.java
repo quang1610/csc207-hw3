@@ -1,8 +1,9 @@
 package csc207.nguyenqu2.layout;
 
+//creates a block with contents of a given TextBlock centered within a certain amount of spaces
 public class CenteredBlock implements TextBlock {
-  private TextBlock text;
-  private int width;
+  private TextBlock text;//textblock to be centered
+  private int width;//total width
 
   public CenteredBlock(TextBlock text, int width) throws Exception {
     if (width < text.width()) {
@@ -11,7 +12,7 @@ public class CenteredBlock implements TextBlock {
     this.text = text;
     this.width = width;
   }
-
+  //returns a row of centered text
   public String row(int i) throws Exception {
     if ((i < 0) || (i > height())) {
       throw new Exception("Invalid row!");
@@ -30,12 +31,15 @@ public class CenteredBlock implements TextBlock {
     }
 
   }
-
+  //gets the width or prints an error if the width of the textblock is larger than the total width
   public int width() {
-    this.width = Math.max(this.text.width(), this.width);
+    if(this.text.width()>this.width) {
+      System.err.println("Invalid width!");
+      System.exit(0);
+    }
     return this.width;
   }
-
+ //gets the height
   public int height() {
     return this.text.height();
   }

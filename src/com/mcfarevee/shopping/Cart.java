@@ -20,7 +20,7 @@ public class Cart {
   //Records the current total price
   private int totalPrice;
   
-  //Records the current total weights of each unit catagory
+  //Records the current total weights of each unit category in this order: [lbs, oz, kg, g]
   private Weight[] weightList;
   
   //Records the current number of things in the cart
@@ -77,55 +77,7 @@ public class Cart {
     this.numEntries++;
   }
 
-/*
-  public void merge() {
-    int amount = 0;
-    for (Item i : cart) {
-      for (Item j : cart) {
-        if (i != j) {
-          if (i.getName().contentEquals(j.getName())) {
-            if (i instanceof Package) {
-              amount = 1;
-              if ((j instanceof Package) && (((Package) i).equals((Package) j))) {
-                amount++;
-                cart.remove(j);
-                numEntries--;
-              } else if ((j instanceof ManyPackages)
-                  && ((Package) i).equals(((ManyPackages) j).getPackage())) {
-                amount += ((ManyPackages) j).getCount();
-                cart.remove(j);
-                numEntries--;
-              }
-              i = new ManyPackages((Package) i, amount);
-            } else if (i instanceof ManyPackages) {
-              amount = ((ManyPackages) i).getCount();
-              if ((j instanceof Package) && ((Package) j).equals(((ManyPackages) i).getPackage())) {
-                amount += 1;
-                cart.remove(j);
-                numEntries--;
-              } else if ((j instanceof ManyPackages)
-                  && ((ManyPackages) i).getPackage().equals(((ManyPackages) j).getPackage())) {
-                amount += ((ManyPackages) j).getCount();
-                cart.remove(j);
-                numEntries--;
-              }
-              i = new ManyPackages(((ManyPackages) i).getPackage(), amount);
-            } else if (i instanceof BulkItem) {
-              amount = ((BulkItem) i).getAmount();
-              if ((j instanceof BulkItem)
-                  && ((BulkItem) i).getFood().equals(((BulkItem) j).getFood())) {
-                amount += ((BulkItem) j).getAmount();
-                cart.remove(j);
-                numEntries--;
-              }
-              i = new BulkItem(((BulkItem) i).getFood(), ((BulkItem) i).getUnit(), amount);
-            }
-          }
-        }
-      }
-    }
-  }
-  */
+  //gets the array of the weights 
   public Weight[] getWeight() {
     return this.weightList;
   }
@@ -196,11 +148,12 @@ public class Cart {
   public int numThings() {
     return this.numThings;
   }
+  //gets the total price 
   public int getPrice() {
     return this.totalPrice;
   }
- //https://stackoverflow.com/questions/223918/iterating-through-a-collection-avoiding-concurrentmodificationexception-when-re
-  //Remove an item with the specific string
+ //*source for iterator how-to* https://stackoverflow.com/questions/223918/iterating-through-a-collection-avoiding-concurrentmodificationexception-when-re
+  //Remove an item with the specific name with a string as the identifier
   public void remove(String name) {
     for (Iterator<Item> iterator = cart.iterator(); iterator.hasNext();) {
       Item item = iterator.next();

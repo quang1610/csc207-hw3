@@ -1,6 +1,6 @@
 package com.mcfarevee.test;
 
-//A class for testing the shopping cart
+//A class for testing the shopping cart for initial testing
 
 import com.mcfarevee.groceries.*;
 import com.mcfarevee.groceries.Package;

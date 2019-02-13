@@ -56,7 +56,9 @@ public class BulkFood {
   public int getSupply() {
     return this.supply;
   }
-  
+  /* @param other bulkfood
+   * @return boolean representing if the fields are equal
+   */
   public boolean equals(BulkFood bf) {
     return ((this.name.equals(bf.getName()) && 
         (this.pricePerUnit == bf.getPricePerUnit()) &&

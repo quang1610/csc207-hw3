@@ -1,8 +1,10 @@
 package csc207.nguyenqu2.layout;
-
+/*
+ * creates a TextBlock that is truncated to a specified width
+ */
 public class TruncatedBlock implements TextBlock {
-  private TextBlock text;
-  private int width;
+  private TextBlock text;//original textblock
+  private int width;//total width of truncated block
   
   public TruncatedBlock(TextBlock tb, int width) throws Exception{
     if((width < 0) || (width > tb.width()))
@@ -13,19 +15,28 @@ public class TruncatedBlock implements TextBlock {
       this.text = tb;
     }
   }
-  
+  /*
+   * @return gets the height
+   */
   public int height() {
     return this.text.height();
   }
-  
+  /*
+   * @return gets the width
+   */
   public int width() {
-    this.width = Math.max(this.text.width(), this.width);
+    if(this.width>this.text.width()) {
+      System.err.println("Invalid width!");
+      System.exit(0);
+
+    }
     return this.width;
   }
-  
+  /*@param integer representing the row
+   * @return truncated row
+   */
   public String row(int i) throws Exception {
     String row = this.text.row(i);
-    row = row.substring(0, width());
-    return row;
+    return row.substring(0, width());
   }
 }

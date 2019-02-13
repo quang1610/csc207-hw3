@@ -2,6 +2,7 @@ package com.mcfarevee.test;
 import com.mcfarevee.shopping.*;
 import com.mcfarevee.groceries.*;
 import com.mcfarevee.groceries.Package;
+//detailed test for all cart methods
 public class CartTest {
   public static void main(String[] args) {
     // The store has 20 pounds of bananas, priced at 50 cents per pound
@@ -38,7 +39,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
     System.out.println("+++++++++++++++++++++++++++++++++");
     System.out.println("Merge Items:");
@@ -48,7 +49,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
     System.out.println("+++++++++++++++++++++++++++++++++");
     System.out.println("Add bananas (BulkItem):");
@@ -59,7 +60,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
     System.out.println("+++++++++++++++++++++++++++++++++");
     System.out.println("Remove bananas (BulkItem):");
@@ -69,7 +70,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
     System.out.println("+++++++++++++++++++++++++++++++++");
     System.out.println("Remove can openers (NonFood):");
@@ -79,7 +80,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
     System.out.println("+++++++++++++++++++++++++++++++++");
     System.out.println("Remove macncheez (Packages):");
@@ -89,7 +90,7 @@ public class CartTest {
     System.out.println("NumEntries: "+cart.numEntries());
     System.out.println("Total Price: "+cart.getPrice());
     for(int i = 0; i<4; i++) {
-      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount());
+      System.out.println("Weight "+i+": "+cart.getWeight()[i].getAmount()+" "+cart.getWeight()[i].getUnit().abbrev());
     }
    
   }
