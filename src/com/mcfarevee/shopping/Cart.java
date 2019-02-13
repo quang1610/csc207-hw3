@@ -4,6 +4,7 @@ package com.mcfarevee.shopping;
 //The cart keeps track of these items and their attributes
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import com.mcfarevee.groceries.*;
 import com.mcfarevee.groceries.Package;
 
@@ -125,7 +126,9 @@ public class Cart {
     }
   }
   */
-  
+  public Weight[] getWeight() {
+    return this.weightList;
+  }
   //Merges any like BulkItems or Package/ManyPackage items into a single item in the cart
   public void merge() { 
     int amount = 0; //Fields for tracking combined amounts of the two items
@@ -193,10 +196,14 @@ public class Cart {
   public int numThings() {
     return this.numThings;
   }
-
+  public int getPrice() {
+    return this.totalPrice;
+  }
+ //https://stackoverflow.com/questions/223918/iterating-through-a-collection-avoiding-concurrentmodificationexception-when-re
   //Remove an item with the specific string
   public void remove(String name) {
-    for (Item item : this.cart) {
+    for (Iterator<Item> iterator = cart.iterator(); iterator.hasNext();) {
+      Item item = iterator.next();
       if (item.getName().contentEquals(name)) {
         this.totalPrice -= item.getPrice();
 
@@ -223,7 +230,7 @@ public class Cart {
 
         this.numEntries--;
 
-        cart.remove(item);
+        iterator.remove();
       }
     }
   }
