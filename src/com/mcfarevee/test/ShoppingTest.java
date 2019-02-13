@@ -1,5 +1,7 @@
 package com.mcfarevee.test;
 
+//A class for testing the shopping cart
+
 import com.mcfarevee.groceries.*;
 import com.mcfarevee.groceries.Package;
 import com.mcfarevee.groceries.Unit;
@@ -32,11 +34,14 @@ public class ShoppingTest {
     cart.addItem(new ManyPackages(new Package("macncheez", new Weight(Unit.OUNCE, 6), 77), 4));
     cart.addItem(new ManyPackages(new Package("macncheez", new Weight(Unit.GRAM, 6), 77), 1));
    
+    //Checking the contents of the cart
     cart.printContents();
     System.out.println("+++++++++++++++++++++++++++++++++");
     cart.merge();
     cart.printContents();
-
+    System.out.println("+++++++++++++++++++++++++++++++++");
+    cart.remove("bananas");
+    cart.printContents();
 
   }
 
